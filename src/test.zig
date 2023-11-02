@@ -1,0 +1,5 @@
+test "actually undefined behavior" {
+    @setRuntimeSafety(false);
+    var x: u8 = 255;
+    x += 1;
+}
