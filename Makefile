@@ -5,15 +5,16 @@ ZIG = zig
 
 # Source and build settings
 EXE = $(notdir $(basename $(firstword $(MAKECMDGOALS))))
+BUILD_MODE = -O Debug
 
 # Build rules
 .PHONY: clean test-%
 
 %:
-	$(ZIG) run src/$@.zig
+	$(ZIG) run $(BUILD_MODE) src/$@.zig
 
 test-%:
-	$(ZIG) test src/$*.zig
+	$(ZIG) test #(BUILD_MODE) src/$*.zig
 
 clean:
 	rm -rf $(OUT)
