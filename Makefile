@@ -14,7 +14,7 @@ BUILD_MODE = -O Debug
 	$(ZIG) run $(BUILD_MODE) src/$@.zig
 
 test-%:
-	$(ZIG) test #(BUILD_MODE) src/$*.zig
+	$(ZIG) test $(BUILD_MODE) src/$*.zig
 
 clean:
 	rm -rf $(OUT)
